@@ -1,0 +1,5 @@
+*.o
+*.out
+ignore.*
+bin
+tmp
