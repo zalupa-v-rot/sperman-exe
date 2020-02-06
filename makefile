@@ -1,9 +1,8 @@
-#CC=gcc
-# CFLAGS=-Wall -Wextra -pedantic -Wno-parentheses -std=c90 -g
-# -Wno-unused-function
-CFLAGS=-Wall -Wextra -pedantic -Wno-parentheses -Wfatal-errors -Werror -std=c89 -g
+#CDFLAGS=-g -fsanitize=address -fsanitize=undefined -fsanitize=bounds -fsanitize=bounds-strict -fsanitize=alignment -fsanitize=object-size
+CDFLAGS=-g
+CFLAGS=-Wall -Wextra -pedantic -Wno-parentheses -Wfatal-errors -Werror -std=c89 $(CDFLAGS)
 LDLIBS=-lSDL
-SRC=./main.c
+SRC=./main.c ./sdl.c
 
 
 DIR?=./tmp

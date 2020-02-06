@@ -1,23 +1,14 @@
-#include <SDL/SDL.h>
-/* сворованно из https://www.badprog.com/c-sdl-simple-directmedia-layer-hello-world */
-
-int main(void) {
-
-  int gogogo = 1;
-  SDL_Event event;
+#include "./sdl.h"
 
 
-  SDL_Init(SDL_INIT_EVERYTHING);
-  SDL_WM_SetCaption("zalupa spermana :D", NULL);
-  SDL_SetVideoMode(800, 600, 32, SDL_HWSURFACE);
+int main () {
 
+  struct sdl_head ssdl;
 
-  while (gogogo) {
-    SDL_WaitEvent(&event);
-    if (event.type == SDL_QUIT)
-    gogogo = 0;
+  if (core(&ssdl)) {
+
+    return 1;
   }
 
-  SDL_Quit();
   return 0;
 }
